@@ -4,6 +4,7 @@
     width: 100%;
     overflow: hidden;
     background-color: #ffffff;
+    min-height: 80vh;
 }
 .custom-banner__illustration{
     width: 100%;
