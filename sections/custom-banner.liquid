@@ -2,7 +2,7 @@
 <div class="cutom-banner">
 <div class="custom-banner__illustration">
     {% if section.settings.illustration %}
-        {{ section.settings.illustration | image_url: width:1200 | img_tag: loading: 'lazy', alt: 'Gift guide illustration' }}
+        {{ section.settings.illustration | image_url: width:1200 | img_tag: loading: 'lazy', alt: 'Gift guide illustration', width: section.settings.illustration.width, height: section.settings.illustration.height }}
     {% endif %}
 </div>
 <div class="custom-banner__content">
