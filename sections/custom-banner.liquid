@@ -1,6 +1,18 @@
 
 {{ 'custom-banner.css' | asset_url | stylesheet_tag }}
 
+<div class="custom-banner__top-bar">
+  {% if section.settings.top_bar_text != blank %}
+    <p class="custom-banner__top-bar-text">{{ section.settings.top_bar_text }}</p>
+  {% endif %}
+  {% if section.settings.top_bar_button_label != blank %}
+    <a href="{{ section.settings.top_bar_button_url | default: '#' }}" class="custom-banner__top-bar-button">
+      <span>{{ section.settings.top_bar_button_label }}</span>
+      <span aria-hidden="true">→</span>
+    </a>
+  {% endif %}
+</div>
+
 <div class="custom-banner">
   <div class="custom-banner__illustration">
     {% if section.settings.illustration %}
@@ -33,6 +45,7 @@
 </div>
 
 {% schema %}
+
 {
   "name": "Custom Banner",
   "settings": [
@@ -69,7 +82,24 @@
       "id": "footer_text",
       "label": "Footer strip text",
       "default": "SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL"
-    }
+    },
+{
+  "type": "text",
+  "id": "top_bar_text",
+  "label": "Top bar text",
+  "default": "Find the ideal gift for your loved ones."
+},
+{
+  "type": "text",
+  "id": "top_bar_button_label",
+  "label": "Top bar button label",
+  "default": "CHOOSE GIFT"
+},
+{
+  "type": "url",
+  "id": "top_bar_button_url",
+  "label": "Top bar button link"
+}
   ],
   "presets": [
     {
