@@ -1,6 +1,6 @@
 /*--------------- custom banner section styles------------- */
 .custom-banner{
-    position: relative;
+    position:absolute;
     width: 100%;
     overflow: hidden;
     background-color: #ffffff;
