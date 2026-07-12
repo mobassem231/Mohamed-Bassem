@@ -1,2 +1,82 @@
+{{'custom-product-grid.css' | asset_url | stylesheet_tag}}
+<div class="product-grid-section">
+    {% if section.settings.heading != blank %}
+        <h2 class="product-grid-section__heading">{{ section.settings.heading }}</h2>
+    {% endif %}
+    <div class="product-grid">
+        {%for block in section.blocks %}
+            {% assign product = block.settings.product %}
+            <div class="product-grid__item" {{block.shopify_attributes}}>
+                {%  if product %}
+                    <div class="product-grid__image-wrap">
+                        <img 
+                        src="{{ product.featured_image | img_url: width: 800 }}" 
+                        alt="{{product.featured_image.alt | default: product.title}}" 
+                        loading="lazy"
+                        width="800"
+                        height="{{800 |  divided_by: product.featured_image.aspect_ratio}}"
+                        >
+                        <button
+                        type="button"
+                        class="product-grid__trigger"
+                        aria-label="Quick view {{ product.title }}"
+                        data-popup-trigger
+                        data-product-handle="{{ product.handle }}"
+                        >
+                        <span aria-hidden="true">+</span>
+                        </button>
+                    </div>
+                    {% else %}
+                    <div class="product-grid__placeholder">
+                        <p>Select a product in the customizer</p>
+                    </div> 
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% schema  %}
+    {
+        "name": "Custom Product Grid",
+        "settings": [
+            {
+                "type": "text",
+                "id": "heading",
+                "label": "Heading",
+                "default": "Tisso vision in the wild"
+            }
+        ],
+        "blocks": [
+            {
+                "type": "product_block",
+                "name": "Product",
+                "settings": [
+                    {
+                        "type": "product",
+                        "id": "product",
+                        "label": "Select product"
+                    }
+                ]
+            }
+        ],
+        "max_blocks": 6,
+        "presets": [
+            {
+                "name": "Custom Product Grid",
+                "blocks": [
+                    {"type": "product_block"},
+                    {"type": "product_block"},
+                    {"type": "product_block"},
+                    {"type": "product_block"},
+                    {"type": "product_block"},
+                    {"type": "product_block"}
+                ]
+            }
+        ]
+    } 
+{% endschema %}
+
+
 {% render 'custom-popup' %}
 {{ 'custom-popup.js' | asset_url | script_tag}}
