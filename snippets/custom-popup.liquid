@@ -1,0 +1,44 @@
+
+{{ 'custom-popup.css' | asset_url | stylesheet_tag }}
+
+<div class="custom-popup-overlay" id="custom-popup-overlay" hidden>
+  <div class="custom-popup" role="dialog" aria-modal="true" aria-labelledby="custom-popup-title">
+    <button type="button" class="custom-popup__close" id="custom-popup-close" aria-label="Close">
+      &times;
+    </button>
+
+    <div class="custom-popup__image-wrap">
+      <img id="custom-popup-image" src="" alt="" width="460" height="460">
+    </div>
+
+    <div class="custom-popup__details">
+      <h3 id="custom-popup-title" class="custom-popup__title"></h3>
+      <p id="custom-popup-price" class="custom-popup__price"></p>
+      <div id="custom-popup-description" class="custom-popup__description"></div>
+
+      <div class="custom-popup__option" id="custom-popup-color-wrap">
+        <p class="custom-popup__option-label">Color</p>
+        <div class="custom-popup__swatches" id="custom-popup-color-options"></div>
+      </div>
+
+      <div class="custom-popup__option" id="custom-popup-size-wrap">
+        <p class="custom-popup__option-label">Size</p>
+        <select id="custom-popup-size-select" class="custom-popup__select">
+          <option value="">Choose your size</option>
+        </select>
+      </div>
+
+      <button
+        type="button"
+        id="custom-popup-add-to-cart"
+        class="custom-popup__add-to-cart"
+        disabled
+      >
+        <span>Add to cart</span>
+        <span aria-hidden="true">→</span>
+      </button>
+
+      <p id="custom-popup-message" class="custom-popup__message" role="status"></p>
+    </div>
+  </div>
+</div>
