@@ -2,6 +2,9 @@
 {{ 'custom-banner.css' | asset_url | stylesheet_tag }}
 
 <div class="custom-banner__top-bar">
+  {% if section.settings.top_bar_logo_text != blank %}
+    <p class="custom-banner__top-bar-logo">{{ section.settings.top_bar_logo_text }}</p>
+  {% endif %}
   {% if section.settings.top_bar_text != blank %}
     <p class="custom-banner__top-bar-text">{{ section.settings.top_bar_text }}</p>
   {% endif %}
@@ -83,6 +86,12 @@
       "label": "Footer strip text",
       "default": "SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL"
     },
+    {
+  "type": "text",
+  "id": "top_bar_logo_text",
+  "label": "Top bar logo text",
+  "default": "TISSO VISON"
+},
 {
   "type": "text",
   "id": "top_bar_text",
