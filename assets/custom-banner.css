@@ -81,21 +81,29 @@
 }
 .custom-banner__top-bar {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
+  gap: 1rem;
   padding: 1rem 5%;
   background-color: #f4f4f4;
+}
+
+.custom-banner__top-bar-logo {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  white-space: nowrap;
 }
 
 .custom-banner__top-bar-text {
   margin: 0;
   font-size: 0.9rem;
   text-align: center;
-  grid-column: 1;
 }
 
 .custom-banner__top-bar-button {
-  grid-column: 2;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
