@@ -49,6 +49,7 @@
           "blocks": {}
         }
       },
+      "disabled": true,
       "settings": {
         "logo_position": "left",
         "menu_position": "left",
@@ -103,66 +104,16 @@
         "description": "<p>Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season.</p>",
         "button_label": "SHOP NOW",
         "button_url": "",
-        "footer_text": "SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL"
-      }
-    },
-    "custom_product_grid_wy4DDq": {
-      "type": "custom-product-grid",
-      "blocks": {
-        "product_block_dcQf6X": {
-          "type": "product_block",
-          "settings": {
-            "product": "black-leather-bag"
-          }
-        },
-        "product_block_zTR8nC": {
-          "type": "product_block",
-          "settings": {
-            "product": "blue-silk-tuxedo"
-          }
-        },
-        "product_block_tPxjz8": {
-          "type": "product_block",
-          "settings": {
-            "product": "chequered-red-shirt"
-          }
-        },
-        "product_block_paQ8HY": {
-          "type": "product_block",
-          "settings": {
-            "product": "classic-leather-jacket"
-          }
-        },
-        "product_block_LmaxGr": {
-          "type": "product_block",
-          "settings": {
-            "product": "classic-varsity-top"
-          }
-        },
-        "product_block_TdkjDR": {
-          "type": "product_block",
-          "settings": {
-            "product": "dark-denim-top"
-          }
-        }
-      },
-      "block_order": [
-        "product_block_dcQf6X",
-        "product_block_zTR8nC",
-        "product_block_tPxjz8",
-        "product_block_paQ8HY",
-        "product_block_LmaxGr",
-        "product_block_TdkjDR"
-      ],
-      "name": "Custom Product Grid",
-      "settings": {
-        "heading": "Tisso vison in the wild"
+        "footer_text": "SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL",
+        "top_bar_logo_text": "TISSO VISON",
+        "top_bar_text": "Find the ideal gift for your loved ones.",
+        "top_bar_button_label": "CHOOSE GIFT",
+        "top_bar_button_url": ""
       }
     }
   },
   "order": [
     "header_section",
-    "custom_banner_pYr9mC",
-    "custom_product_grid_wy4DDq"
+    "custom_banner_pYr9mC"
   ]
 }
