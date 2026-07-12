@@ -1,3 +1,73 @@
+{{ 'custom-banner.css' | asset_url | stylesheet_tag}}
 <div class="cutom-banner">
-
+<div class="custom-banner__illustration">
+    {% if section.settings.illustration %}
+        {{ section.settings.illustration | image_url: width:1200 | img_tag: loading: 'lazy', alt: 'Gift guide illustration' }}
+    {% endif %}
 </div>
+<div class="custom-banner__content">
+    {% if section.settings.heading != blank %}
+        <h1 class="custom-banner__heading">{{ section.settings.heading }}</h1>
+    {% endif %}
+    {% if section.settings.description != blank %}
+        <h1 class="custom-banner__description">{{ section.settings.description }}</h1>
+    {% endif %}
+    {% if section.settings.button_label != blank %}
+        <a href="{{ section.settings.button_url | default: '#' }}" class="custom-banner__button">
+            <span>{{ section.settings.button_label }}</span>
+            <span class="custom-banner__button-arrow">-></span>
+        </a>
+    {% endif %}
+</div>
+{% if section.settings.footer_text != blank %}
+    <div class="custom-banner__footer">
+        {{ section.settings.footer_text }}
+    </div>
+{% endif %}
+</div>
+{% schema %}
+{
+    "name": "Custom Banner",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "illustration",
+            "label": "Illustration image"
+        },
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading",
+            "default": "The Gift Guide"
+        },
+        {
+            "type": "richtext",
+            "id": "description",
+            "label": "Description",
+            "default": "<p>Discover Joy: Your Ultimate Holiday Gift Destination</p>"
+        },
+        {
+            "type": "text",
+            "id": "button_label",
+            "label": "Button label",
+            "default": "SHOP NOW"
+        },
+        {
+            "type": "url",
+            "id": "button_url",
+            "label": "Button link"
+        },
+        {
+            "type": "text",
+            "id": "footer_text",
+            "label": "Footer strip text",
+            "default": "SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Custom Banner"
+        }
+    ]
+}
+{% endschema %}
