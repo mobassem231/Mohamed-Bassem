@@ -79,6 +79,31 @@
   text-transform: uppercase;
   color: #555555;
 }
+.custom-banner__top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 5%;
+  background-color: #f4f4f4;
+}
+
+.custom-banner__top-bar-text {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.custom-banner__top-bar-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.25rem;
+  background-color: #f5e642;
+  color: #000000;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
 
 /* ==========================================================================
    Mobile responsiveness
