@@ -80,29 +80,38 @@
   color: #555555;
 }
 .custom-banner__top-bar {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto;
   align-items: center;
-  justify-content: space-between;
-  padding: 0.75rem 5%;
+  padding: 1rem 5%;
   background-color: #f4f4f4;
 }
 
 .custom-banner__top-bar-text {
   margin: 0;
   font-size: 0.9rem;
+  text-align: center;
+  grid-column: 1;
 }
 
 .custom-banner__top-bar-button {
+  grid-column: 2;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.6rem 1.25rem;
+  padding: 0.75rem 1.5rem;
   background-color: #f5e642;
   color: #000000;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.85rem;
   text-transform: uppercase;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+.custom-banner__top-bar-button:hover {
+  background-color: #e8d827;
 }
 
 /* ==========================================================================
